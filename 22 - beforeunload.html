@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevent Unloading Example</title>
+</head>
+<body>
+  <p>This page demonstrates the `beforeunload` event listener.</p>
+  <button id="preventUnloadButton">Prevent Unloading</button>
+  <p id="unloadMessage"></p>
+
+  <script>
+    window.addEventListener('beforeunload', (event) => {
+      event.preventDefault(); // Prevent the default behavior (e.g., page navigation)
+      event.returnValue = ''; // Some browsers require setting this property
+      return ''; // Required by some browsers
+
+      // Display a message in the paragraph
+      const unloadMessageElement = document.getElementById('unloadMessage');
+      unloadMessageElement.textContent = 'Leaving the page?';
+    });
+
+    document.getElementById('preventUnloadButton').addEventListener('click', () => {
+      event.preventDefault(); // Prevent default form submission behavior
+      const unloadMessageElement = document.getElementById('unloadMessage');
+      unloadMessageElement.textContent = 'Unload prevented by button click';
+    });
+  </script>
+</body>
+</html>

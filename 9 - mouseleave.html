@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events</title>
+  <style>
+    #mouseleaveDiv {
+      width: 100px;
+      height: 100px;
+      background: lightsteelblue;
+      border: 1px solid black; /* Added border for visual feedback */
+    }
+    #para {
+      width: 100px;
+      height: 100px;
+      background: rgb(214, 133, 10);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="mouseleaveDiv"></div>
+  <p id="para">Content will appear on mouseleave</p>
+  <script>
+    const leaveoutDiv = document.getElementById('mouseleaveDiv');
+    const messagePara = document.getElementById('para');
+
+    leaveoutDiv.addEventListener('mouseenter', () => {
+      messagePara.textContent = "Mouse entered the area"; 
+    });
+
+    leaveoutDiv.addEventListener('mouseleave', () => {
+      messagePara.style.display = 'block';
+      messagePara.textContent = "Mouse left the div!";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+##############################################################
+					Event Listeners
+##############################################################
+
+------------------Mouse Event listeners-----------------------
+
+
+**************************************************************1
+							Click
+**************************************************************1
+document.getElementById("idname").addEventListener('click',()=>{
+alert("this button was clicked")
+})
+
+**************************************************************2
+							dblclick
+**************************************************************2
+document.getElementById('idname').addEventListener('dblclick,()=>{
+alert("double click happened")
+}
+
+**************************************************************3
+							mousedown
+**************************************************************3
+document.getElementById("idname").addEventListener('mousedown', ()=>{
+alert("mouse button pressed down")
+})
+
+**************************************************************4
+							mouseup
+**************************************************************4
+document.getElementById('idname').addEventListener('mouseup', ()=>{
+alert("mouse button released")
+})
+
+**************************************************************5
+							mousemove
+**************************************************************5
+
+//if you want to display the content into the dom---->
+<style>
+-------style according to your desire
+display: none;
+</style>
+
+document.getElementById("idname").addEventListener('mousemove',()=>{
+const element = document.getElementById('element')
+element.style.display = 'block'
+element.innerContent = "This is the content"
+})
+
+**************************************************************6
+							mouseover
+**************************************************************6
+
+document.getElementById('div').addEventListener('mouseover', ()=>{
+const para = document.getElementById('para')
+para.style.display = 'block'
+para.textContent = "this is the content inside the para"
+
+**************************************************************7
+							mouseout
+**************************************************************7
+
+<div id="mouseoutDiv" style="width: 100px; height: 100px; background: lightpink;"></div>
+    <p id="para" style="width: 100px; height: 100px; background: orange; display: none;"></p>
+<script>
+    document.getElementById('mouseoutDiv').addEventListener('mouseout', () => {
+        const para = document.getElementById('para')
+        para.style.display = 'block'
+        para.textContent = "This is the mouseout property changed by js"
+    });
+	
+**************************************************************8
+							mouseenter
+**************************************************************8
+//It's similar to the mouseover but it only performs action when the mouse enter the specific element instead the mouseover performs action when the mouse inters the parent or child both
+<div id="mouseenterDiv" style="width: 100px; height: 100px; background: lightseagreen;"></div>
+<script>
+    document.getElementById('mouseenterDiv').addEventListener('mouseenter', () => {
+        console.log('Mouse entered the div');
+    });
+	
+**************************************************************9
+							mouseleave
+**************************************************************9
+ // just a modified version----------------------->
+ 
+ <div id="mouseleaveDiv"></div>
+  <p id="para">Content will appear on mouseleave</p>
+  <script>
+    const leaveoutDiv = document.getElementById('mouseleaveDiv');
+    const messagePara = document.getElementById('para');
+
+    leaveoutDiv.addEventListener('mouseenter', () => {
+      messagePara.textContent = "Mouse entered the area"; 
+    });
+
+    leaveoutDiv.addEventListener('mouseleave', () => {
+      messagePara.style.display = 'block';
+      messagePara.textContent = "Mouse left the div!";
+    });
+	
+########################################################
+				Keyboard events
+				
+**************************************************************10
+							keydown
+**************************************************************10
+document.getElementById('div').addEventListener('keydown', (e)=>{
+            const para = document.getElementById('para')
+            para.textContent = `you pressed:${e.key}`
+        })
+		
+**************************************************************11
+							keyup
+**************************************************************11
+    <script>
+        document.getElementById('div').addEventListener('keyup', (e)=>{
+            const para = document.getElementById('para')
+            para.textContent = `you pressed:${e.key}`
+        })
+		
+		
+###############################################################
+						Form Events
+						
+**************************************************************12
+							submit
+**************************************************************12
+<form id="myForm">
+    <input type="text" id="inputField" placeholder="Enter your name">
+    <button type="submit">Submit</button>
+  </form>
+  <div id="popup" class="popup">
+    <h2>Popup Title</h2>
+    <p id="popupContent"></p>
+  </div>
+  <script>
+    const form = document.getElementById('myForm');
+    const inputField = document.getElementById('inputField');
+    const popup = document.getElementById('popup');
+    const popupContent = document.getElementById('popupContent');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const enteredName = inputField.value;
+      popupContent.textContent = `Hello, ${enteredName}!`;
+      popup.style.display = 'block';
+    });
+	
+**************************************************************13
+							change
+**************************************************************13
+<select id="changeSelect">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </select>
+    <script>
+        document.getElementById('changeSelect').addEventListener('change', (event) => {
+            alert(`Selected value: ${event.target.value}`);
+        });
+    </script>
+	
+**************************************************************14
+							input
+**************************************************************14
+<input type="text" id="inputText" placeholder="Type something">
+    <p id="para"></p>
+<script>
+    document.getElementById('inputText').addEventListener('input', (event) => {
+        const para = document.getElementById('para')
+        para.textContent= `value changed to: ${event.target.value}`
+    });
+
+**************************************************************15
+							focus
+**************************************************************15
+<input type="text" id="focusInput" placeholder="Focus on me">
+<p id="para"></p>
+<script>
+  document.getElementById('focusInput').addEventListener('focus', () => {
+    const para = document.getElementById('para');
+    para.textContent = `Focused! Current value: ${document.getElementById('focusInput').value}`;
+  });
+</script>
+
+**************************************************************16
+							blur
+**************************************************************16
+<input type="text" id="blurInput" placeholder="Focus on me and then click away" width="500px">
+    <p id="para"></p>
+<script>
+    document.getElementById('blurInput').addEventListener('blur', () => {
+        const para = document.getElementById('para')
+        para.textContent="input lost focus"
+    });
+</script>
+
+**************************************************************17
+							reset
+**************************************************************17
+<!-- Form will be reset when you press the button -->
+    <form id="resetForm">
+        <input type="text" placeholder="Your name">
+        <button type="reset">Reset</button>
+        <p id="para"></p>
+    </form>
+    <script>
+        document.getElementById('resetForm').addEventListener('reset', () => {
+            const para = document.getElementById('para')
+            para.textContent = "Form has been rested"
+        });
+    </script>
+	
+**************************************************************18
+							load
+**************************************************************18
+<script>
+    window.addEventListener('load', () => {
+        console.log('Page fully loaded');
+		//put here whatever you want
+    });
+</script>
+
+**************************************************************19
+							unload
+**************************************************************19
+<script>
+        window.addEventListener('unload', () => {
+            console.log('Page is unloading');
+        });
+    </script>    
+
+**************************************************************20
+							resize
+**************************************************************20
+<p id="para"></p>
+    <script>
+        // here are some more properties like innerWidth and innerHeight and initialWidth and initialHeight
+        const para = document.getElementById('para');
+        let initialWidth = window.innerWidth;
+        let initialHeight = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth !== initialWidth || window.innerHeight !== initialHeight) {
+                para.textContent = "Window has been resized";
+            } else {
+                para.textContent = "Window has been reset";
+            }
+        });
+    </script>
+	
+**************************************************************21
+							scroll
+**************************************************************21
+<div id="scrollDiv" style="width: 200px; height: 100px; overflow: scroll; background: lightgray;">
+        <p>Scroll me!</p>
+        <p>Scroll me!</p>
+        <p>Scroll me!</p>
+        <p>Scroll me!</p>
+    </div>
+    <p id="para"></p>
+    <script>
+        document.getElementById('scrollDiv').addEventListener('scroll', () => {
+            const para = document.getElementById('para')
+            para.textContent = "div is being scrolled"
+        });
+    </script>
+	
+**************************************************************22
+							beforeunload
+**************************************************************22
+<p>This page demonstrates the `beforeunload` event listener.</p>
+  <button id="preventUnloadButton">Prevent Unloading</button>
+  <p id="unloadMessage"></p>
+
+  <script>
+    window.addEventListener('beforeunload', (event) => {
+      event.preventDefault(); // Prevent the default behavior (e.g., page navigation)
+      event.returnValue = ''; // Some browsers require setting this property
+      return ''; // Required by some browsers
+
+      // Display a message in the paragraph
+      const unloadMessageElement = document.getElementById('unloadMessage');
+      unloadMessageElement.textContent = 'Leaving the page?';
+    });
+
+    document.getElementById('preventUnloadButton').addEventListener('click', () => {
+      event.preventDefault(); // Prevent default form submission behavior
+      const unloadMessageElement = document.getElementById('unloadMessage');
+      unloadMessageElement.textContent = 'Unload prevented by button click';
+    });
+  </script>
+  
+ **************************************************************23
+							copy
+***************************************************************23
+<input type="text" value="Copy this text" id="copyText">
+    <div id="para"></div>
+    <script>
+    document.getElementById('copyText').addEventListener('copy', (event) => {
+        const para = document.getElementById('para')
+        para.textContent = "text has been copied"
+    })
+    </script>

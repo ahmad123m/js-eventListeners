@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mouseoutDiv" style="width: 100px; height: 100px; background: lightpink;"></div>
+    <p id="para" style="width: 100px; height: 100px; background: orange; display: none;"></p>
+<script>
+    document.getElementById('mouseoutDiv').addEventListener('mouseout', () => {
+        const para = document.getElementById('para')
+        para.style.display = 'block'
+        para.textContent = "This is the mouseout property changed by js"
+    });
+</script>
+
+</body>
+</html>

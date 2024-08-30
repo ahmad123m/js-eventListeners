@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Basically when you press the area targeted by the mousedown property it instantly shows the message -->
+    <div id="mousedownDiv" style="width: 100px; height: 100px; background: yellow;"></div>
+<script>
+    document.getElementById('mousedownDiv').addEventListener('mousedown', () => {
+        alert('Mouse button pressed down!');
+    });
+</script>
+
+</body>
+</html>

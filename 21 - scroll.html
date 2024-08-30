@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="scrollDiv" style="width: 200px; height: 100px; overflow: scroll; background: lightgray;">
+        <p>Scroll me!</p>
+        <p>Scroll me!</p>
+        <p>Scroll me!</p>
+        <p>Scroll me!</p>
+    </div>
+    <p id="para"></p>
+    <script>
+        document.getElementById('scrollDiv').addEventListener('scroll', () => {
+            const para = document.getElementById('para')
+            para.textContent = "div is being scrolled"
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Change Monitor</title>
+</head>
+<body>
+    <select id="changeSelect">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </select>
+    <script>
+        document.getElementById('changeSelect').addEventListener('change', (event) => {
+            alert(`Selected value: ${event.target.value}`);
+        });
+    </script>
+    
+  </script>
+</body>
+</html>

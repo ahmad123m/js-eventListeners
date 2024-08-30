@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #idname{
+            width: 100px;
+            height: 100px;
+            background: #800080;
+        }
+        #para{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="idname"></div>
+    <p id="para"></p>
+    <script>
+        document.getElementById('idname').addEventListener('mousemove',()=>{
+            const para = document.getElementById('para')
+            para.style.display = 'block'
+            para.textContent = "Mouse button released"
+        })
+    </script>
+</body>
+</html>

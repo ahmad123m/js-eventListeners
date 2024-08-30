@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- It shows the message when you release the button -->
+    <div id="mouseupDiv" style="width: 100px; height: 100px; background: lightblue;"></div>
+<script>
+    document.getElementById('mouseupDiv').addEventListener('mouseup', () => {
+        alert('Mouse button released!');
+    });
+</script>
+</body>
+</html>

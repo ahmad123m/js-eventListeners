@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display on Button Click</title>
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Type something">
+    <p id="para"></p>
+<script>
+    document.getElementById('inputText').addEventListener('input', (event) => {
+        const para = document.getElementById('para')
+        para.textContent= `value changed to: ${event.target.value}`
+    });
+  </script>
+</body>
+</html>

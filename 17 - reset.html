@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Form will be reset when you press the button -->
+    <form id="resetForm">
+        <input type="text" placeholder="Your name">
+        <button type="reset">Reset</button>
+        <p id="para"></p>
+    </form>
+    <script>
+        document.getElementById('resetForm').addEventListener('reset', () => {
+            const para = document.getElementById('para')
+            para.textContent = "Form has been rested"
+        });
+    </script>
+    
+</body>
+</html>

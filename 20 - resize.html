@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        // here are some more properties like innerWidth and innerHeight and initialWidth and initialHeight
+        const para = document.getElementById('para');
+        let initialWidth = window.innerWidth;
+        let initialHeight = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth !== initialWidth || window.innerHeight !== initialHeight) {
+                para.textContent = "Window has been resized";
+            } else {
+                para.textContent = "Window has been reset";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="focusInput" placeholder="Focus on me">
+<p id="para"></p>
+<script>
+  document.getElementById('focusInput').addEventListener('focus', () => {
+    const para = document.getElementById('para');
+    para.textContent = `Focused! Current value: ${document.getElementById('focusInput').value}`;
+  });
+</script>
+
+</body>
+</html>
